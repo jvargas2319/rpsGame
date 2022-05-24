@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Header</title>
+    
+  </head>
+  <body>
+    <script>
+        let pScore = 0;
+        let cScore = 0;
+        function computerPlay(){
+            let comChoices = ['rock', 'paper', 'scissors'];
+            let comChoice = comChoices[Math.floor(Math.random() * comChoices.length)]
+            // computer choose random choice from list
+            return comChoice
+
+        }
+        
+
+        function playRound(playerSelection, computerSelection) {
+            // your code here!
+            // compare playerSeclection and computerSelection answers
+            // return a string that declares the winner
+           
+            switch (playerSelection.toLowerCase() + computerSelection.toLowerCase()) {
+                case 'rockscissors':
+                case 'paperrock':
+                case 'scissorspaper':
+                    console.log('Player wins')
+                    pScore += 1
+
+                    break
+                case 'paperpaper':
+                case 'rockrock':
+                case 'scissorsscissors':
+                    console.log('Its a Tie!')
+                    break
+                case 'rockpaper':
+                case 'paperscissors':
+                case 'scissorsrock':
+                    console.log('Computer Wins')
+                    cScore += 1
+                    break
+
+
+
+            }
+
+        }
+
+        function game(){
+            
+            for (let i = 0; i < 5; i++) {
+                // your code here!
+                const playerSelection = prompt();
+                const computerSelection = computerPlay();
+                playRound(playerSelection,computerSelection)
+                console.log(pScore)
+                console.log(cScore)
+            }
+            
+        }
+
+
+console.log(game());
+    </script>
+  </body>
+</html>
